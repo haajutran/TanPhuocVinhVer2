@@ -4,6 +4,7 @@ import { Row, Col, Carousel, Card } from "antd";
 import i1 from "../assets/images/1.jpg";
 import i2 from "../assets/images/2.jpg";
 import i3 from "../assets/images/3.jpg";
+import ContactForm from "./ContactForm";
 
 const { Meta } = Card;
 
@@ -25,11 +26,11 @@ const Home = props => (
     </div>
 
     <div className="functions">
-      <Row type="flex" justify="center">
-        <Col md={10} lg={7} xl={5}>
+      <Row type="flex" justify="space-around">
+        <Col md={10} lg={7} xl={4}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            style={{ width: 300 }}
             cover={
               <img
                 alt="example"
@@ -40,10 +41,10 @@ const Home = props => (
             <Meta title="Thiết kế nhà" />
           </Card>
         </Col>
-        <Col md={10} lg={7} xl={5}>
+        <Col md={10} lg={7} xl={4}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            style={{ width: 300 }}
             cover={
               <img
                 alt="example"
@@ -54,10 +55,10 @@ const Home = props => (
             <Meta title="Thiết kế khách sạn" />
           </Card>
         </Col>
-        <Col md={10} lg={7} xl={5}>
+        <Col md={10} lg={7} xl={4}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            style={{ width: 300 }}
             cover={
               <img
                 alt="example"
@@ -68,10 +69,10 @@ const Home = props => (
             <Meta title="Thiết kế resort" />
           </Card>
         </Col>
-        <Col md={10} lg={7} xl={5}>
+        <Col md={10} lg={7} xl={4}>
           <Card
             hoverable
-            style={{ width: 250 }}
+            style={{ width: 300 }}
             cover={
               <img
                 alt="example"
@@ -84,6 +85,8 @@ const Home = props => (
         </Col>
       </Row>
     </div>
+
+    <ContactForm />
   </div>
 );
 
