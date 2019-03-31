@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TanPhuocVinh.Models;
+using System.Globalization;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,6 +25,10 @@ namespace TanPhuocVinh.Controllers
         [Route("getall")]
         public async Task<ActionResult<IEnumerable<PostItem>>> GetAll()
         {
+            //foreach(var item in _context.PostItems) {
+            //    string time = item.Time.ToString("dd/M/yyyy hh:mm:ss");
+            //    item.Time = Convert.ToDateTime(time);
+            //}
             return await _context.PostItems.ToListAsync();
         }
 
@@ -37,6 +42,8 @@ namespace TanPhuocVinh.Controllers
             {
                 return NotFound();
             }
+            //string time = todoItem.Time.ToString("dd/M/yyyy hh:mm:ss");
+            //todoItem.Time = Convert.ToDateTime(time);
 
             return todoItem;
         }
@@ -50,6 +57,8 @@ namespace TanPhuocVinh.Controllers
             {
                 return BadRequest();
             }
+
+            item.Time = DateTime.Now;
             _context.PostItems.Add(item);
             await _context.SaveChangesAsync();
 

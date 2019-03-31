@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { routerReducer, routerMiddleware } from "react-router-redux";
 
+import * as Home from "./Home";
 import * as ContactForm from "./ContactForm";
 
 import * as Counter from "./Counter";
@@ -9,6 +10,7 @@ import * as WeatherForecasts from "./WeatherForecasts";
 
 export default function configureStore(history, initialState) {
   const reducers = {
+    home: Home.reducer,
     contactForm: ContactForm.reducer,
 
     counter: Counter.reducer,
