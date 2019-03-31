@@ -56,16 +56,33 @@ namespace TanPhuocVinh.Controllers
             return CreatedAtAction(nameof(GetPost), new { id = item.Id }, item);
         }
 
-        // PUT api/<controller>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPut]
+        [Route("update/{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody]PostItem item)
         {
+            item.Id = id;
+
+            _context.Entry(item).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            var result = await _context.PostItems.FindAsync(id);
+            return Ok(result);
         }
 
-        // DELETE api/<controller>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        [Route("delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
+            var item = await _context.PostItems.FindAsync(id);
+
+            if (item == null)
+            {
+                return NotFound();
+            }
+
+            _context.PostItems.Remove(item);
+            await _context.SaveChangesAsync();
+
+            return Ok();
         }
     }
 }
