@@ -98,13 +98,13 @@ class Home extends React.Component {
           <Row>
             <Col xl={12}>
               <div className="left">
-                <div class="img-container">
+                <div className="img-container">
                   <img
                     src="https://img1.goodfon.com/wallpaper/big/a/8b/more-noch-luna-plyazh-pirs-ogni.jpg"
                     alt="Nature"
                     style={{ width: "100%", height: 300 }}
                   />
-                  <div class="text-block">
+                  <div className="text-block">
                     <h4>Nature</h4>
                     <p>What a beautiful sunrise</p>
                   </div>
@@ -115,13 +115,13 @@ class Home extends React.Component {
               <div className="right">
                 <Row>
                   <Col className="item1" xl={24}>
-                    <div class="img-container">
+                    <div className="img-container">
                       <img
                         src="https://architecturebeast.com/wp-content/uploads/2014/08/Top_50_Modern_House_Designs_Ever_Built_featured_on_architecture_beast_43.jpg"
                         alt="Nature"
                         style={{ width: "100%", height: 145 }}
                       />
-                      <div class="text-block">
+                      <div className="text-block">
                         <h4>Nature</h4>
                         <p>What a beautiful sunrise</p>
                       </div>
@@ -130,26 +130,26 @@ class Home extends React.Component {
                   <Col span={24}>
                     <Row>
                       <Col span={12} className="item2">
-                        <div class="img-container">
+                        <div className="img-container">
                           <img
                             src="https://st.hzcdn.com/simgs/0791ec72020b5ff7_4-7177/contemporary-landscape.jpg"
                             alt="Nature"
                             style={{ width: "100%", height: 145 }}
                           />
-                          <div class="text-block">
+                          <div className="text-block">
                             <h4>Nature</h4>
                             <p>What a beautiful sunrise</p>
                           </div>
                         </div>
                       </Col>
                       <Col span={12} className="item3">
-                        <div class="img-container">
+                        <div className="img-container">
                           <img
                             src="https://img1.goodfon.com/wallpaper/big/a/8b/more-noch-luna-plyazh-pirs-ogni.jpg"
                             alt="Nature"
                             style={{ width: "100%", height: 145 }}
                           />
-                          <div class="text-block">
+                          <div className="text-block">
                             <h4>Nature</h4>
                             <p>What a beautiful sunrise</p>
                           </div>

@@ -211,3 +211,21 @@ body {
   color: white;
   font-size: 20px;
 }
+
+/* Admin */
+
+.admin {
+  padding: 24px;
+  background: #fff;
+  min-height: 90vh;
+}
+
+.plus-image-btn {
+  width: 50px;
+  height: 50px;
+  margin-top: 50px;
+}
+
+.admin-carousel .carousel-item {
+  margin-top: 1em;
+}
