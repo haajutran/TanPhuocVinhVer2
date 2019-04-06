@@ -93,3 +93,121 @@ body {
   color: #5f6366;
   margin-top: 1em;
 }
+
+/* News */
+.news {
+  margin: auto;
+  width: fit-content;
+}
+
+.news .ant-row > * {
+  /* width: 600px; */
+}
+
+.news .left {
+  height: 300px;
+  width: 600px;
+  background: red;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.news .right {
+  /* width: 100%; */
+  width: 600px;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.news .right .item1 {
+  height: 145px;
+  background: blue;
+}
+
+.news .right .item2 {
+  margin-top: 10px;
+  height: 145px;
+  background: rgb(71, 71, 50);
+  width: 295px;
+  margin-right: 10px;
+}
+
+.news .right .item3 {
+  margin-top: 10px;
+  height: 145px;
+  background: rgb(71, 71, 50);
+  width: 295px;
+}
+
+.img-container {
+  position: relative;
+  font-family: Arial;
+  -webkit-box-shadow: 0px 1px 2px 0px #282828;
+  -moz-box-shadow: 0px 1px 2px 0px #282828;
+  box-shadow: 0px 1px 2px 0px #282828;
+  -webkit-transition: all 0.3s linear 0s;
+}
+
+.img-container:hover {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 1);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 1);
+}
+
+.img-container:before {
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  background: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(40%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0.7))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.img-container img {
+  object-fit: cover;
+}
+
+.text-block {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  z-index: 10;
+}
+
+.text-block h4 {
+  color: white;
+  font-size: 20px;
+}
