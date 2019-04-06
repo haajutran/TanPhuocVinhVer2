@@ -29,6 +29,7 @@ namespace TanPhuocVinh.Controllers
             //    string time = item.Time.ToString("dd/M/yyyy hh:mm:ss");
             //    item.Time = Convert.ToDateTime(time);
             //}
+
             return await _context.PostItems.ToListAsync();
         }
 
@@ -42,6 +43,7 @@ namespace TanPhuocVinh.Controllers
             {
                 return NotFound();
             }
+
             //string time = todoItem.Time.ToString("dd/M/yyyy hh:mm:ss");
             //todoItem.Time = Convert.ToDateTime(time);
 
