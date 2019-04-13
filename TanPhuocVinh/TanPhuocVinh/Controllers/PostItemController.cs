@@ -11,8 +11,9 @@ using System.Globalization;
 
 namespace TanPhuocVinh.Controllers
 {
-    [Route("api/post")]
-    public class PostItemController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class PostItemController : ControllerBase
     {
         private readonly PostItemContext _context;
 
@@ -21,21 +22,15 @@ namespace TanPhuocVinh.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        [Route("getall")]
+        [HttpGet("GetAll")]
         public async Task<ActionResult<IEnumerable<PostItem>>> GetAll()
         {
-            //foreach(var item in _context.PostItems) {
-            //    string time = item.Time.ToString("dd/M/yyyy hh:mm:ss");
-            //    item.Time = Convert.ToDateTime(time);
-            //}
 
             return await _context.PostItems.ToListAsync();
         }
 
-        [HttpGet]
-        [Route("get/{id}")]
-        public async Task<ActionResult<PostItem>> GetPost(int id)
+        [HttpGet("GetPostItem")]
+        public async Task<ActionResult<PostItem>> GetPostItem(int id)
         {
             var todoItem = await _context.PostItems.FindAsync(id);
 
@@ -51,8 +46,7 @@ namespace TanPhuocVinh.Controllers
         }
 
         // POST: api/postitem
-        [HttpPost]
-        [Route("add")]
+        [HttpPost("Add")]
         public async Task<IActionResult> Add([FromBody]PostItem item)
         {
             if (item == null)
@@ -64,23 +58,21 @@ namespace TanPhuocVinh.Controllers
             _context.PostItems.Add(item);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetPost), new { id = item.Id }, item);
+            return CreatedAtAction(nameof(GetPostItem), new { id = item.Id }, item);
         }
 
-        [HttpPut]
-        [Route("update/{id}")]
+        [HttpPut("Update")]
         public async Task<IActionResult> Update(int id, [FromBody]PostItem item)
         {
             item.Id = id;
-
+            item.Time = DateTime.Now;
             _context.Entry(item).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             var result = await _context.PostItems.FindAsync(id);
             return Ok(result);
         }
 
-        [HttpDelete]
-        [Route("delete/{id}")]
+        [HttpDelete("Delete")]
         public async Task<IActionResult> Delete(int id)
         {
             var item = await _context.PostItems.FindAsync(id);
